@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 
 contract Pricing{
-    uint256 DefaultunitPrice=30;
+    uint256 public DefaultunitPrice=30;
     struct Product{
         string name;
         uint256 price;
@@ -13,7 +13,7 @@ contract Pricing{
     Product[] public listOfProducts;
     // array of fixed length
     Product[3] public listOf3Products;
-    function calculateTotalPrice(uint unitsSold) public view returns(uint){
+    function calculateTotalPrice(uint unitsSold) public view virtual  returns(uint){
         return unitsSold*DefaultunitPrice;
     }
     // mappings is likened to dict in python
